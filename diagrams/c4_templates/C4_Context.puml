@@ -1,6 +1,5 @@
 ' convert it with additional command line argument -DRELATIVE_INCLUDE="relative/absolute" to use locally
-  !include C4.puml
-
+ !include C4.puml
 ' Scope: A single software system.
 ' Primary elements: The software system in scope.
 ' Supporting elements: People and software systems directly connected to the software system in scope.
