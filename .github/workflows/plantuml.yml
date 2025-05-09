@@ -27,10 +27,10 @@ jobs:
 
       - name: Generate Diagrams
         run: |
-          plantuml diagrams/context/*.puml
-          plantuml diagrams/container/*.puml
-          plantuml diagrams/component/*.puml
-          plantuml diagrams/code/*.puml
+          plantuml -v diagrams/context/*.puml
+          plantuml -v diagrams/container/*.puml
+          plantuml -v diagrams/component/*.puml
+          plantuml -v diagrams/code/*.puml
 
       - name: Commit Diagrams
         if: success()
