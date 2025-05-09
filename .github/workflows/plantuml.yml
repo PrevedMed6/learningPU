@@ -40,7 +40,7 @@ jobs:
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/PrevedMed6/learningPU.git
+          git remote set-url origin https://x-access-token:${{ secrets.SECRET_YA }}@github.com/PrevedMed6/learningPU.git
           git add diagrams/**/*.png || true
           git diff --cached --quiet || git commit -m "Automated diagram generation"
           git push origin main
