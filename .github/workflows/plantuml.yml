@@ -7,6 +7,9 @@ on:
   pull_request:
     branches:
       - main
+permissions:
+  contents: write  # Позволяет записывать файлы в репозиторий
+  pull-requests: write  # Для создания pull-requests
 
 jobs:
   generate-diagrams:
@@ -36,11 +39,10 @@ jobs:
           java -jar plantuml.jar -v diagrams/component/*.puml
           java -jar plantuml.jar -v diagrams/code/*.puml
 
-      - name: Commit and push diagrams
+      - name: Commit diagrams
         run: |
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git remote set-url origin https://x-access-token:${{ secrets.SECRET_YA }}@github.com/PrevedMed6/learningPU.git
           git add diagrams/**/*.png || true
           git diff --cached --quiet || git commit -m "Automated diagram generation"
           git push origin main
